@@ -33,41 +33,48 @@ public static void main(String[] args) throws InterruptedException {
     
     String nama[]={"r","d","a"};
     String pass [] = {"w", "k", "l"};
+    String kel [][] = {nama, pass};
    
     //flag
     int pilihan = 0;
 
 //looping mencocokan data array dengan input
-    for (int i = 0; i < 2 ; i++){
+    for (int i = 0; i < 2; i++){
         for (int c = 0; c < 3; c++){
-            
-            if(usename.equalsIgnoreCase(nama[i]) && password.equalsIgnoreCase( pass[c])){
+            if(usename.equalsIgnoreCase(kel[i][c]) && password.equalsIgnoreCase( pass [c])){
                 printWithDelays("Login anda berhasil\n", TimeUnit.MILLISECONDS, 100);
                 printWithDelays("selamat datang "+usename+" we glad to see you\n ", TimeUnit.MILLISECONDS, 100);
+                printWithDelays("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhalo " + usename + " apa yang anda inginkan? \n1.lihat Barang\n2.logout\n",TimeUnit.MILLISECONDS, 100);
+                String menu = myobj.nextLine();
+                 //switch case
+                switch (menu){
+                   case ("1") : printWithDelays("barang terlihat\nterima kasih banyak :)",TimeUnit.MILLISECONDS, 100);
+                   break;
+           
+           
+                   case ("2") : printWithDelays("anda telah log out \n selamat menikmati hari anda",TimeUnit.MILLISECONDS, 100);
+                   break;
+                }
                 pilihan = 1;
                 
             
                 }
+              
             }
+         
+                 
    
         }
         if (pilihan == 0 ){
             printWithDelays("data tidak ditemukan\n", TimeUnit.MILLISECONDS, 100);
-
-
-
-     }
-     //switch case
-     printWithDelays("halo " + usename + " apa yang anda inginkan? \n1.lihat Barang\n2.logout\n",TimeUnit.MILLISECONDS, 100);
-     String menu = myobj.nextLine();
+            
+        
+             
      
-     switch (menu){
-        case ("1") : printWithDelays("barang terlihat \nterima kasih banyak :)",TimeUnit.MILLISECONDS, 100);
-        break;
+    
+     
 
-
-        case ("2") : printWithDelays("anda telah log out \n selamat menikmati hari anda",TimeUnit.MILLISECONDS, 100);
-     }
     }
+}
 }
     
